@@ -1,7 +1,7 @@
 const pool = require('../config/database');
 
 class Arranjo {
-  static async getAll(filters = {}, options = {}) {
+  static async getAll(_filters = {}, options = {}) {
     const limit = options.limit || null;
     const offset = options.offset || 0;
     const params = [];

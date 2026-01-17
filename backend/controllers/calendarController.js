@@ -1,6 +1,6 @@
 const Agendamento = require('../models/agendamento');
 const { createEvents } = require('ics');
-const { format, parseISO } = require('date-fns');
+const { parseISO } = require('date-fns');
 
 exports.exportarICS = async (req, res) => {
   try {

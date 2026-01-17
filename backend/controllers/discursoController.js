@@ -1,5 +1,5 @@
 const Discurso = require('../models/discurso');
-const { differenceInMonths, parseISO } = require('date-fns');
+const { differenceInMonths } = require('date-fns');
 
 exports.getAll = async (req, res) => {
   try {

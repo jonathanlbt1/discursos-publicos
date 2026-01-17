@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { getArranjos, createArranjo, updateArranjo, deleteArranjo, getCongregacoes } from '../services/api';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 
 function Arranjos({ usuarioLogado }) {
   const [arranjos, setArranjos] = useState([]);

@@ -8,7 +8,7 @@ const Congregacao = require('../models/congregacao');
 const pool = require('../config/database');
 
 // Helper para formatar data/hora atual no timezone de Brasília (UTC-3)
-function formatBrasiliaTime(formatStr) {
+function formatBrasiliaTime(_formatStr) {
   const now = new Date();
   // Usar Intl.DateTimeFormat para obter os componentes da data/hora em Brasília
   const formatter = new Intl.DateTimeFormat('pt-BR', {
@@ -271,7 +271,7 @@ exports.relatorioHistoricoDiscursos = async (req, res) => {
        .moveDown(1);
 
     // Discursos
-    discursos.forEach((d, index) => {
+    discursos.forEach((d, _index) => {
       if (doc.y > 650) {
         doc.addPage();
         addHeader(doc, 'Histórico Completo de Discursos (continuação)');
@@ -386,7 +386,7 @@ exports.relatorioOradores = async (req, res) => {
        .moveDown(1.5);
 
     // Listar oradores
-    oradoresComHistorico.forEach((o, index) => {
+    oradoresComHistorico.forEach((o, _index) => {
       if (doc.y > 680) {
         doc.addPage();
         addHeader(doc, 'Relatório de Oradores (continuação)');

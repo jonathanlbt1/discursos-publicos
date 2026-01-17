@@ -13,7 +13,7 @@ try {
     dns.setDefaultResultOrder('ipv4first');
     console.log('DNS resolver configured to prefer IPv4 addresses (ipv4first)');
   }
-} catch (e) {
+} catch {
   // Non-fatal; continue with default resolver behavior
 }
 
@@ -24,7 +24,7 @@ try {
   if (fs.existsSync(projectEnv)) {
     require('dotenv').config({ path: projectEnv });
   }
-} catch (e) {
+} catch {
   // ignore dotenv load errors; we'll surface connection errors later
 }
 
@@ -75,7 +75,7 @@ if (!connectionString) {
 // DNS diagnostics: log A/AAAA records for the DB host (non-blocking)
 try {
   const dbHostForDiag = (process.env.DATABASE_URL && (() => {
-    try { return new URL(process.env.DATABASE_URL).hostname; } catch(e) { return null; }
+    try { return new URL(process.env.DATABASE_URL).hostname; } catch { return null; }
   })()) || process.env.DB_HOST || null;
   if (dbHostForDiag) {
     dns.promises.resolve4(dbHostForDiag)

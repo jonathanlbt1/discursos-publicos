@@ -35,7 +35,7 @@ exports.authenticate = (req, res, next) => {
       req.usuario = decoded;
       return next();
     });
-  } catch (error) {
+  } catch {
     return res.status(401).json({ error: 'Falha na autenticação' });
   }
 };
@@ -75,7 +75,7 @@ exports.optionalAuth = (req, res, next) => {
       }
       return next();
     });
-  } catch (error) {
+  } catch {
     return next();
   }
 };
