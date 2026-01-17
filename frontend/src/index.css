@@ -1,0 +1,98 @@
+:root {
+  /* Light theme colors */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.12);
+  --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-color: #667eea;
+  --primary-hover: #764ba2;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --verse-bg: linear-gradient(90deg, #fff9c4, #e8f5e9);
+  --verse-border: #388e3c;
+  --verse-text: #1b5e20;
+  --verse-date: #2e7d32;
+  --oradores-list-bg: #fafafa;
+  --oradores-list-border: #ddd;
+  --oradores-list-text: #333333;
+  --oradores-list-empty-text: #666666;
+  --oradores-select-btn-bg: #f0f0f0;
+  --oradores-select-btn-border: #ddd;
+  --congregacoes-list-bg: #f9f9f9;
+  --congregacoes-list-border: #ddd;
+  --congregacoes-list-text: #333333;
+  --congregacoes-list-empty-text: #999999;
+  --congregacoes-list-hover-bg: #e9ecef;
+  --agendamento-card-bg: #f8f9fa;
+  --agendamento-card-text: #333333;
+  --agendamento-card-title: #333333;
+  --agendamento-card-date-text: #333333;
+  --calendar-cell-has-events-bg: #f0f7ff;
+  --calendar-cell-has-events-hover-bg: #e3f2fd;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  --header-gradient: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  --primary-color: #667eea;
+  --primary-hover: #7c8ff0;
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --verse-bg: linear-gradient(90deg, #4a5568, #2d3748);
+  --verse-border: #667eea;
+  --verse-text: #e0e0e0;
+  --verse-date: #b0b0b0;
+  --oradores-list-bg: #3a3a3a;
+  --oradores-list-border: #555555;
+  --oradores-list-text: #e0e0e0;
+  --oradores-list-empty-text: #b0b0b0;
+  --oradores-select-btn-bg: #4a4a4a;
+  --oradores-select-btn-border: #666666;
+  --congregacoes-list-bg: #3a3a3a;
+  --congregacoes-list-border: #555555;
+  --congregacoes-list-text: #e0e0e0;
+  --congregacoes-list-empty-text: #b0b0b0;
+  --congregacoes-list-hover-bg: #4a4a4a;
+  --agendamento-card-bg: #3a3a3a;
+  --agendamento-card-text: #e0e0e0;
+  --agendamento-card-title: #e0e0e0;
+  --agendamento-card-date-text: #e0e0e0;
+  --calendar-cell-has-events-bg: #2d3748;
+  --calendar-cell-has-events-hover-bg: #4a5568;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

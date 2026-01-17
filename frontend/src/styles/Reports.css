@@ -1,0 +1,229 @@
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.report-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.report-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.report-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.report-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.report-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.report-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.report-details li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.report-details li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.month-display {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+  flex: 1;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.month-selector .btn {
+  padding: 0.4rem 0.8rem;
+  min-width: 40px;
+}
+
+.reports-help {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.reports-help h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.reports-help ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reports-help li {
+  padding: 0.5rem 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.reports-help strong {
+  color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .reports-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .report-card {
+    padding: 1.25rem;
+  }
+
+  .report-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .report-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .reports-help {
+    padding: 1.5rem;
+  }
+
+  .month-selector {
+    flex-direction: column;
+  }
+
+  .month-selector .btn {
+    width: 100%;
+  }
+
+  .month-display {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Animações */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.btn:disabled {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Lista de oradores para seleção */
+.oradores-list-container {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--oradores-list-border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: var(--oradores-list-bg);
+  transition: all 0.3s ease;
+}
+
+.oradores-list-empty {
+  font-size: 0.9rem;
+  color: var(--oradores-list-empty-text);
+  margin: 0.5rem 0;
+}
+
+.oradores-list-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  margin: 0;
+  color: var(--oradores-list-text);
+  transition: color 0.3s ease;
+}
+
+.oradores-list-item:hover {
+  color: var(--primary-color);
+}
+
+.oradores-select-all-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--oradores-select-btn-bg);
+  border: 1px solid var(--oradores-select-btn-border);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.oradores-select-all-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+

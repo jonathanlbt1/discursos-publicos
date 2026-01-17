@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: discursos-backend
+    environment:
+        NODE_ENV: production
+        PORT: 3001
+        ADMIN_EMAIL: admin@admin.com
+        ADMIN_PASSWORD: "@Senha123"
+        ADMIN_NAME: Administrador
+        DB_HOST: host.docker.internal
+        DB_PORT: 5432
+        DB_NAME: discursos
+        DB_USER: postgres
+        DB_PASSWORD: 123
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+      - backend_node_modules:/app/node_modules
+    restart: unless-stopped
+    command: ["sh", "-c", "node migrations/run_create_admin_user.js || true; node server.js"]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: "http://localhost:3001/api"
+    container_name: discursos-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_node_modules:
