@@ -369,7 +369,7 @@ Para problemas ou dúvidas:
 
 Este projeto foi desenvolvido como open source para irmãos que cuidam dos arranjos de discursos das congregações.
 
-## 🔄 Se quiser colaborar com o projeto, faça o clone e abra um PR
+## 🔄 Se quiser colaborar com o projeto, faça o fork e abra um PR
 
 ---
 
